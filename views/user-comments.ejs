@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>User <%= userId %> Comments</title>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+
+<body>
+    <header class="main-header">
+        <nav class="main-header__nav">
+            <ul class="main-header__item-list">
+                <li class="main-header__item"><a class="active" href="/">Home</a></li>
+                <li class="main-header__item"><a href="/add-user">Add User</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>User <%= userId %> Comments</h1>
+        
+        <% if (comments.length > 0) { %>
+            <div class="comments-list">
+                <% for (let comment of comments) { %>
+                    <div class="comment">
+                        <h2><%= comment.title %></h2>
+                        <p><%= comment.description %></p>
+                        <p>Likes: <%= comment.likes %></p>
+                    </div>
+
+                    <form method="GET" action="/edit-comment/<%= userId %>/<%= comment._id %>">
+                        <button type="submit">Edit Comment</button>
+                    </form>
+
+                    <br>
+
+                    <form method="POST" action="/delete-comment/<%= userId %>/<%= comment._id %>">
+                        <button type="submit">Delete Comment</button>
+                    </form>
+                <% } %>
+            </div>
+        <% } else { %>
+            <h2>No Comments Found!</h2>
+        <% } %>
+    </main>
+</body>
+
+</html>

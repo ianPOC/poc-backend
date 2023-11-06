@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Edit Comment</title>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+
+<body>
+    <header class="main-header">
+        <nav class="main-header__nav">
+            <ul class="main-header__item-list">
+                <li class="main-header__item"><a href="/">User Home</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Edit Comment</h1>
+
+        <form class="product-form" action="/edit-comment/<%= userId %>/<%= commentId %>" method="POST">
+            <div class="form-control">
+                <label for="user_name">Title</label>
+                <input type="text" name="title" id="title">
+            </div>
+
+            <div class="form-control">
+                <label for="user_name">Description</label>
+                <input type="text" name="description" id="description">
+            </div>
+
+            <br>
+
+            <button type="submit">Edit Comment</button>
+        </form>
+    </main>
+</body>
+
+</html>

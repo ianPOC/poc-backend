@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Edit User</title>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+
+<body>
+    <header class="main-header">
+        <nav class="main-header__nav">
+            <ul class="main-header__item-list">
+                <li class="main-header__item"><a href="/">User Home</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Edit User <%= userId %></h1>
+
+        <form class="product-form" action="/edit-user/<%= userId %>" method="POST">
+            <div class="form-control">
+                <label for="user_name">Age</label>
+                <input type="number" name="age" id="age">
+            </div>
+
+            <div class="form-control">
+                <label for="user_name">First name</label>
+                <input type="text" name="first_name" id="first_name">
+            </div>
+
+            <div class="form-control">
+                <label for="last_name">Last name</label>
+                <input type="text" name="last_name" id="last_name">
+            </div>
+
+            <div class="form-control">
+                <label for="email">Email</label>
+                <input type="text" name="email" id="email">
+            </div>
+
+            <br>
+
+            <button type="submit">Edit User</button>
+        </form>
+    </main>
+</body>
+
+</html>
